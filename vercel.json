@@ -1,0 +1,22 @@
+{
+  "framework": "vite",
+  "buildCommand": "npm run build",
+  "outputDirectory": "dist",
+  "routes": [
+    { "handle": "filesystem" },
+    { "src": "/api/(.*)", "dest": "/api/$1" },
+    { "src": "/(.*)", "dest": "/index.html" }
+  ],
+  "functions": {
+    "api/**/*": {
+      "memory": 1024
+    }
+  },
+  "rewrites": [
+    { "source": "/api/templates", "destination": "/api/templates.js" },
+    { "source": "/api/templates/featured", "destination": "/api/featured.js" },
+    { "source": "/api/templates/:id", "destination": "/api/templates/[id].js" },
+    { "source": "/api/testimonials", "destination": "/api/testimonials.js" },
+    { "source": "/api/contact", "destination": "/api/contact.js" }
+  ]
+}
