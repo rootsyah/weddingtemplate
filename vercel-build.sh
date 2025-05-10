@@ -1,8 +1,8 @@
 #!/bin/bash
 
-# Build client
+# Build client saja (tanpa server)
 echo "🔨 Building client..."
-npm run build
+vite build
 
 # Pastikan folder API disalin
 echo "📂 Copying API files to dist..."
